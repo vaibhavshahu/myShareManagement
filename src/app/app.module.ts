@@ -9,6 +9,11 @@ import { BrokerageEditComponent } from './brokerage-edit/brokerage-edit.componen
 import { MySharesAddComponent } from './my-shares-add/my-shares-add.component';
 import { MySharesGetComponent } from './my-shares-get/my-shares-get.component';
 import { MySharesEditComponent } from './my-shares-edit/my-shares-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+import {CalendarModule} from 'primeng/calendar';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +27,11 @@ import { MySharesEditComponent } from './my-shares-edit/my-shares-edit.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SlimLoadingBarModule,
+    CalendarModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
