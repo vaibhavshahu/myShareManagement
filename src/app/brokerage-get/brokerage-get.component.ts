@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+import { BrokerageService } from '../brokerage.service';
 
 @Component({
   selector: 'app-brokerage-get',
@@ -9,7 +10,7 @@ import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 export class BrokerageGetComponent implements OnInit {
 
   angForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private br: BrokerageService) {
     this.createForm();
   }
 
@@ -20,6 +21,10 @@ export class BrokerageGetComponent implements OnInit {
       start_date: ['', Validators.required ],
       end_date: ['', Validators.required ]
     });
+  }
+
+  addBrokrage(type, rate, start_date,end_date) {
+    this.br.addBrokrage(type, rate, start_date,end_date);
   }
 
   ngOnInit() {

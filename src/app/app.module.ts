@@ -14,6 +14,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import {CalendarModule} from 'primeng/calendar';
 
+import { HttpClientModule } from '@angular/common/http';
+import { BrokerageService } from './brokerage.service';
+
 
 @NgModule({
   declarations: [
@@ -31,9 +34,10 @@ import {CalendarModule} from 'primeng/calendar';
     SlimLoadingBarModule,
     CalendarModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BrokerageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

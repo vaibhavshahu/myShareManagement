@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="form-group">
-        <button type="submit" 
+        <button (click)="addBrokrage(type.value, rate.value, start_date.value,end_date.value)" type="submit" 
         [disabled]="angForm.pristine || angForm.invalid" 
         class="btn btn-primary">Add</button>
       </div>
