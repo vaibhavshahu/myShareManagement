@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BrokerageService {
 
-  uri = 'http://localhost:4000/business';
+  uri = 'http://localhost:4000/brokerage';
 
   constructor(private http: HttpClient) { }
 

@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define collection and schema for Business
-let Business = new Schema({
+let Brokerage = new Schema({
   type: {
     type: String
   },
   rate: {
-    type: number
+    type: Number
   },
   start_date: {
     type: Date
