@@ -7,7 +7,7 @@ let Brokerage = require('../models/Brokerage');
 
 // Defined store route
 brokerageRoutes.route('/add').post(function (req, res) {  
-  let brokerage = new Brokerage(req.body);
+  let brokerage = new Brokerage(req.body);  
   brokerage.save()
     .then(brokerage => {
       res.status(200).json({'brokerage': 'brokerage in added successfully'});

@@ -4,6 +4,7 @@ const express = require('express'),
     cors = require('cors'),
     mongoose = require('mongoose'),
     config = require('./DB');
+    
 
     const brokerageRoute = require('./routes/brokerage.route');
     mongoose.Promise = global.Promise;
