@@ -34,9 +34,10 @@ export class BrokerageService {
             .get(`${this.uri}/edit/${id}`);
     }
 
-    updateBrokerage(type, rate, start_date, end_date,id) {
+    updateBrokerage(type, rate, start_date, end_date,id) {      
 
       const obj = {
+          id:id,
           type: type,
           rate: rate,
           start_date: start_date,

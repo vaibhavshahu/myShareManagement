@@ -14,9 +14,7 @@ export class BrokerageGetComponent implements OnInit {
   angForm: FormGroup;
   brokerage: any = {};
   editMode = false;
-  public year: any;
-public month: any;
-public day: any; 
+  id : Number;
 
   constructor(private route: ActivatedRoute,private router: Router,private fb: FormBuilder,private br: BrokerageService) {
     this.createForm();
@@ -44,9 +42,11 @@ public day: any;
   }
 
   updateBrokerage(type, rate, start_date,end_date) {
+    //debugger;
     this.route.params.subscribe(params => {
-       this.br.updateBrokerage(type, rate, start_date,end_date, params['id']);
-       this.router.navigate(['brokerage']);
+       this.br.updateBrokerage(type, rate, start_date,end_date, this.id);
+       //this.router.navigate(['brokerage']);
+       this.getBrokerages();
  });
 }
 
@@ -62,7 +62,9 @@ editBrokerage(id){
   this.route.params.subscribe(params => {
       this.br.editBrokerage(id).subscribe(res => {
         this.brokerage = res;
-        this.brokerage.start_date = this.fn_getDate(this.brokerage.start_date);
+        this.brokerage.start_date =(this.brokerage.start_date == null) ? null : new Date(this.brokerage.start_date);
+        this.brokerage.end_date =(this.brokerage.end_date == null) ? null : new Date(this.brokerage.end_date);
+        this.id = this.brokerage._id;        
         console.log(this.brokerage);
     });
   });
@@ -71,19 +73,5 @@ editBrokerage(id){
 
   ngOnInit() {
     this.getBrokerages();
-  }
-
-  fn_getDate(inputDate) {
-    var date = new Date(inputDate);
-    this.year = date.getFullYear();
-    this.month = date.getMonth() + 1;
-    this.day = date.getDate();
-    if (this.day < 10) {
-      this.day = "0" + this.day;
-    }
-    if (this.month < 10) {
-      this.month = "0" + this.month;
-    }
-    return this.year + "-" + this.month + "-" + this.day;
-  }
+  }  
 }
