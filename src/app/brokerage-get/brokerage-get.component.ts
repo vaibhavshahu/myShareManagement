@@ -30,8 +30,9 @@ export class BrokerageGetComponent implements OnInit {
   }
 
   addBrokrage(type, rate, start_date,end_date) {
-    this.br.addBrokrage(type, rate, start_date,end_date);
+    this.br.addBrokrage(type, rate, start_date,end_date);    
     this.getBrokerages();
+    this.angForm.reset();
   }
 
   deleteBrokerage(id) {
@@ -46,7 +47,8 @@ export class BrokerageGetComponent implements OnInit {
     this.route.params.subscribe(params => {
        this.br.updateBrokerage(type, rate, start_date,end_date, this.id);
        //this.router.navigate(['brokerage']);
-       this.getBrokerages();
+       this.brokerages.push();// half complete code. need to pass the correct value    
+       this.angForm.reset();
  });
 }
 
