@@ -5,7 +5,7 @@
         <label class="col-md-4">type</label>        
 		<select class="form-control" formControlName="type" #type [(ngModel)] = "brokerage.type">
           <option value="intraday">Intraday</option>
-          <option value="non-intraday">Non Intraday</option>          
+          <option value="delivery">Delivery</option>          
         </select>
       </div>
       <div *ngIf="angForm.controls['type'].invalid && (angForm.controls['type'].dirty || angForm.controls['type'].touched)" class="alert alert-danger">
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="col-md-4">Rate </label>
+        <label class="col-md-4">Rate</label>
         <input type="text" class="form-control" formControlName="rate" #rate [(ngModel)] = "brokerage.rate"/>
       </div>
       <div *ngIf="angForm.controls['rate'].invalid && (angForm.controls['rate'].dirty || angForm.controls['rate'].touched)" class="alert alert-danger">
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="col-md-4">Start Date </label>
+        <label class="col-md-4">Start Date</label>
         <p-calendar formControlName="start_date" dateFormat="dd/mm/yy" [monthNavigator]="true" [yearNavigator]="true" yearRange="2017:2019" showIcon=true #start_date [(ngModel)] = "brokerage.start_date"></p-calendar>
       </div>
       <div *ngIf="angForm.controls['start_date'].invalid && (angForm.controls['start_date'].dirty || angForm.controls['start_date'].touched)" class="alert alert-danger">
@@ -32,7 +32,7 @@
         </div>
       </div>
 	   <div class="form-group">
-        <label class="col-md-4">End Date </label>
+        <label class="col-md-4">End Date</label>
         <p-calendar formControlName="end_date" dateFormat="dd/mm/yy" [monthNavigator]="true" [yearNavigator]="true" yearRange="2017:2019" showIcon=true #end_date [(ngModel)] = "brokerage.end_date"></p-calendar>
       </div>
       <div *ngIf="angForm.controls['end_date'].invalid && (angForm.controls['end_date'].dirty || angForm.controls['end_date'].touched)" class="alert alert-danger">
