@@ -13,7 +13,7 @@ export class MySharesAddComponent implements OnInit {
 
   ngOnInit() {
       this.registerForm = this.formBuilder.group({
-        firstName: ['', Validators.required],
+        name: ['', Validators.required],
         buy_price: ['', Validators.required],
         qty_purchased: ['', Validators.required],
         purchased_date: ['', Validators.required]       
