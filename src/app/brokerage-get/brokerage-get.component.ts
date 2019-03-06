@@ -31,7 +31,7 @@ export class BrokerageGetComponent implements OnInit {
 
   addBrokrage(type, rate, start_date,end_date) {
     this.br.addBrokrage(type, rate, start_date,end_date);    
-    this.getBrokerages();
+    this.getBrokerages(); 
     this.angForm.reset();
   }
 

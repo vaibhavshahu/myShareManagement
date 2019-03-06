@@ -1,3 +1,43 @@
-<p>
-  my-shares-add works!
-</p>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Add the share</h2>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Share Name</label>
+                        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Share name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Buy Price</label>
+                        <input type="text" formControlName="buy_price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.buy_price.errors }" />
+                        <div *ngIf="submitted && f.buy_price.errors" class="invalid-feedback">
+                            <div *ngIf="f.buy_price.errors.required">Buy Price is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity Purchased</label>
+                        <input type="text" formControlName="qty_purchased" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.qty_purchased.errors }" />
+                        <div *ngIf="submitted && f.qty_purchased.errors" class="invalid-feedback">
+                            <div *ngIf="f.qty_purchased.errors.required">Quantity Purchased is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Purchased Date</label>                        
+                        <p-calendar formControlName="purchased_date" dateFormat="dd/mm/yy" [monthNavigator]="true" [yearNavigator]="true" yearRange="2017:2019" showIcon=true></p-calendar>
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        </div>
+                    </div>                   
+                                        
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
